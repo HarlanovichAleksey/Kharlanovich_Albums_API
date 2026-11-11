@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Альбомы и их авторы (JSONPlaceholder API)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Альбомы и их авторы</h1>
+            <p class="subtitle">Работа с API JSONPlaceholder</p>
+        </header>
+
+        <!-- Поиск и выбор альбома -->
+        <div class="controls">
+            <div class="control-group">
+                <label for="searchInput">Поиск по названию:</label>
+                <input type="text" id="searchInput" placeholder="Введите название...">
+            </div>
+            <div class="control-group">
+                <label for="albumSelect">Выберите альбом:</label>
+                <select id="albumSelect" disabled>
+                    <option value="">Загрузка...</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Сообщение об ошибке -->
+        <div id="errorMessage" class="error-message" style="display: none;"></div>
+
+        <!-- Блок с информацией об авторе -->
+        <section id="authorInfo" class="author-card" style="display: none;">
+            <h2>Автор альбома</h2>
+            <div class="author-details">
+                <p><strong>Имя:</strong> <span id="authorName"></span></p>
+                <p><strong>Username:</strong> <span id="authorUsername"></span></p>
+                <p><strong>Email:</strong> <span id="authorEmail"></span></p>
+                <p id="photoCountText" class="photo-count"></p>
+            </div>
+        </section>
+
+        <!-- Сетка фотографий -->
+        <section id="photosContainer" class="photos-grid" style="display: none;"></section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
